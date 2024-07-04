@@ -1,0 +1,11 @@
+<mvc:View controllerName="plants.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <List  items="{/PLANTS}" mode="SingleSelectMaster"  >
+        <items>
+        <StandardListItem  title="{PLANT_NAME}"  description="{PLANT_LOC}"  info="{PLANT_REVENUE}"  icon="{PLANT_AVATAR}" type="Navigation" ></StandardListItem>
+        </items>
+        </List>
+    </Page>
+</mvc:View>

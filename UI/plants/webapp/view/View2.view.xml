@@ -1,0 +1,7 @@
+<mvc:View controllerName="plants.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="page2">
+        <content />
+    </Page>
+</mvc:View>
