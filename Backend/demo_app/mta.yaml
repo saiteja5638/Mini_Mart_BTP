@@ -1,5 +1,5 @@
 _schema-version: '3.1'
-ID: Mini_Mart
+ID: demo_app
 version: 1.0.0
 description: "A simple CAP project."
 parameters:
@@ -11,7 +11,7 @@ build-parameters:
         - npm ci
         - npx cds build --production
 modules:
-  - name: Mini_Mart-srv
+  - name: demo_app-srv
     type: nodejs
     path: gen/srv
     parameters:
@@ -25,18 +25,18 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: Mini_Mart-db
+      - name: demo_app-db
 
-  - name: Mini_Mart-db-deployer
+  - name: demo_app-db-deployer
     type: hdb
     path: db
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: Mini_Mart-db
+      - name: demo_app-db
 
 resources:
-  - name: Mini_Mart-db
+  - name: demo_app-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana

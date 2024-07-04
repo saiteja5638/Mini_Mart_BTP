@@ -1,4 +1,5 @@
-context interactions {
+namespace app.interactions;
+
     entity PLANTS {
         key PLANT_ID         : String;
             PLANT_NAME       : String;
@@ -11,5 +12,3 @@ context interactions {
             PLANT_CUST_COUNT : String;
     }
 
-
-}
