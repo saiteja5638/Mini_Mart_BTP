@@ -1,0 +1,25 @@
+<mvc:View xmlns:cards="sap.f.cards" xmlns:f="sap.f" controllerName="productmaster.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+ 
+		<f:GridList
+			id="gridList"
+			
+			items="{/MaterialManagement}">
+			<f:GridListItem id="_IDGenGridListItem1"  class="sapUiSmallMargin" >
+				<VBox id="_IDGenVBox1" class="sapUiSmallMargin" width="100%"    >
+					<layoutData>
+						<FlexItemData id="_IDGenFlexItemData1" growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					</layoutData>
+                     <Image id="_IDGenImage1"  src="{AVATAR}"  width="100px"   height="100px" ></Image>  
+					<Title id="_IDGenTitle1" text="{PRODUCT_NAME}" wrapping="true" />
+					<Label id="_IDGenLabel1" text="{PRODUCT_DESC}" wrapping="true" />
+                    <Text  text="Quantiy :{QUAN_AVAIL}"  ></Text>
+                    <Text  text="Dealer :{CUR_DEALER}"  ></Text>
+
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+    </Page>
+</mvc:View>

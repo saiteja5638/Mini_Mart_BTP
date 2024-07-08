@@ -1,0 +1,11 @@
+<mvc:View controllerName="productmaster.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+      xmlns:f="sap.f"
+    xmlns="sap.m">
+    <App id="app">
+  <f:FlexibleColumnLayout id="_IDGenFlexibleColumnLayout1" >
+  
+  </f:FlexibleColumnLayout>
+    </App>
+</mvc:View>

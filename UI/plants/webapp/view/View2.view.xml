@@ -2,6 +2,10 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="page2">
-        <content />
+        <ObjectHeader id="_IDGenObjectHeader1" 
+        
+        >
+        
+        </ObjectHeader> 
     </Page>
 </mvc:View>

@@ -1,0 +1,7 @@
+<mvc:View xmlns:cards="sap.f.cards" xmlns:f="sap.f" controllerName="productmaster.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="page2">
+
+    </Page>
+</mvc:View>
