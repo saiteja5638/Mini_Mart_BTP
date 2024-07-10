@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "productmaster",
+    "id": "employeesmaster",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,8 +12,8 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.14.0",
-      "toolsId": "a4abf339-e8a0-4106-b837-a4af528e3a0a"
+      "version": "1.14.1",
+      "toolsId": "f0c8c9bd-fe19-4463-aa30-f9aee92dd475"
     },
     "dataSources": {
       "mainService": {
@@ -80,7 +80,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "productmaster.i18n.i18n"
+          "bundleName": "employeesmaster.i18n.i18n"
         }
       },
       "": {
@@ -99,15 +99,12 @@
         }
       ]
     },
-    "config": {
-      "fullWidth":true
-    },
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "productmaster.view",
+        "viewPath": "employeesmaster.view",
         "controlAggregation": "pages",
         "controlId": "_IDGenFlexibleColumnLayout1",
         "clearControlAggregation": false
@@ -151,7 +148,7 @@
       }
     },
     "rootView": {
-      "viewName": "productmaster.view.App",
+      "viewName": "employeesmaster.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
@@ -159,6 +156,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "productmaster"
+    "service": "employeesmaster"
   }
 }

@@ -1,0 +1,46 @@
+<mvc:View xmlns:uxap="sap.uxap" controllerName="employeesmaster.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    height="100%"
+    xmlns="sap.m">
+   <uxap:ObjectPageLayout id="_IDGenObjectPageLayout1" 
+       enableLazyLoading="true"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false" >
+   <uxap:headerTitle>
+   <uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
+   <uxap:expandedHeading>
+   <Title id="_IDGenTitle1"   text="King1" ></Title>
+   </uxap:expandedHeading>
+   </uxap:ObjectPageDynamicHeaderTitle>
+   </uxap:headerTitle>
+   <uxap:headerContent>
+   <FlexBox id="_IDGenFlexBox1" wrap="Wrap">
+    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://cdn-icons-png.freepik.com/256/912/912318.png?semt=ais_hybrid" ></Avatar>
+     <HBox id="_IDGenHBox1"   >
+     <HBox id="_IDGenHBox2" >
+     <Text id="_IDGenText1"  text="Employee Name:" class="sapUiSmallMarginEnd sapUiTinyMarginTop"  ></Text>
+     <SearchField id="_IDGenSearchField1"   placeholder="*******"  class="sapUiSmallMarginEnd" ></SearchField>
+     </HBox>
+      <HBox id="_IDGenHBox3"  class="sapUiSmallMarginBegin" >
+     <Text id="_IDGenText2"  text="Designation:" class="sapUiSmallMarginEnd sapUiTinyMarginTop"  ></Text>
+     <SearchField id="_IDGenSearchField2"   placeholder="*******"  class="sapUiSmallMarginEnd" ></SearchField>
+     </HBox>
+     </HBox>
+   </FlexBox>
+   </uxap:headerContent>
+   <uxap:sections>
+   <uxap:ObjectPageSection id="_IDGenObjectPageSection1" >
+   <uxap:subSections>
+   <uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection1" >
+   <List id="_IDGenList1"   items="{/Employees}"  mode="SingleSelectMaster"  selectionChange="on_trigger"  >
+   <items>
+   <StandardListItem id="_IDGenStandardListItem1" icon="https://w7.pngwing.com/pngs/123/359/png-transparent-transfer-man-employee-user-avatar-arrow-refresh-icon-thumbnail.png" title="NAME :{Name}"  description="DESIGNATION :{Role}"   info="{Branch}" type="Navigation" ></StandardListItem>
+   </items>
+   </List>
+   </uxap:ObjectPageSubSection>
+   </uxap:subSections>
+   </uxap:ObjectPageSection>
+   </uxap:sections>
+   </uxap:ObjectPageLayout>
+</mvc:View>

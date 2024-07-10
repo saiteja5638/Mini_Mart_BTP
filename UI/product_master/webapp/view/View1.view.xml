@@ -5,7 +5,8 @@
  
 		<f:GridList
 			id="gridList"
-			
+			selectionChange="handle_press"
+			mode="SingleSelectMaster"
 			items="{/MaterialManagement}">
 			<f:GridListItem id="_IDGenGridListItem1"  class="sapUiSmallMargin" >
 				<VBox id="_IDGenVBox1" class="sapUiSmallMargin" width="100%"    >
@@ -13,11 +14,7 @@
 						<FlexItemData id="_IDGenFlexItemData1" growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
 					</layoutData>
                      <Image id="_IDGenImage1"  src="{AVATAR}"  width="100px"   height="100px" ></Image>  
-					<Title id="_IDGenTitle1" text="{PRODUCT_NAME}" wrapping="true" />
-					<Label id="_IDGenLabel1" text="{PRODUCT_DESC}" wrapping="true" />
-                    <Text  text="Quantiy :{QUAN_AVAIL}"  ></Text>
-                    <Text  text="Dealer :{CUR_DEALER}"  ></Text>
-
+					<Title id="_IDGenTitle1" text="{PRODUCT_NAME}" wrapping="true"  textAlign="Center" />
 				</VBox>
 			</f:GridListItem>
 		</f:GridList>
