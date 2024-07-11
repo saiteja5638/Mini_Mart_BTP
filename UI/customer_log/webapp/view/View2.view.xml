@@ -1,0 +1,105 @@
+<mvc:View xmlns:uxap="sap.uxap" controllerName="customerlog.controller.View2"
+xmlns:layout="sap.ui.layout" xmlns:cards="sap.f.cards" xmlns:f="sap.f"
+xmlns:forms="sap.ui.layout.form"
+height="100%"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   <uxap:ObjectPageLayout id="_IDGenObjectPageLayout1" 
+    enableLazyLoading="true"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false"
+    >
+    <uxap:headerTitle>
+    <uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
+    <uxap:expandedHeading>
+    <HBox id="_IDGenHBox1" >
+    <Title id="_IDGenTitle1"  text="Example1" wrapping="true" ></Title>
+     <ObjectMarker id="_IDGenObjectMarker1"  type="Favorite"  class="sapUiTinyMarginBegin" ></ObjectMarker>
+    </HBox>
+    </uxap:expandedHeading>
+    <uxap:expandedContent>
+    <Text id="_IDGenText1" text="Example 2"/>
+    </uxap:expandedContent>
+    <uxap:actions>
+     <Button id="_IDGenButton1"   icon="sap-icon://decline" press="Close_tab" ></Button>
+    </uxap:actions>
+    </uxap:ObjectPageDynamicHeaderTitle>
+    </uxap:headerTitle>
+    <uxap:headerContent>
+    <FlexBox id="_IDGenFlexBox1"  wrap="Wrap" >
+    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/order-placed-purchased-icon.svg" ></Avatar>
+    <!-- <layout:VerticalLayout id="_IDGenVerticalLayout1"  class="sapUiSmallMarginBeginEnd" >
+    <HBox id="_IDGenHBox2" >
+    <Title id="_IDGenText2"   text="Email: "  ></Title>
+    <Text id="_IDGenText3"    ></Text>
+    </HBox>
+    <HBox id="_IDGenHBox" >
+    <Title id="_IDGenText85"   text="Phone Number: " ></Title>
+    <Text id="_IDGenText856"    ></Text>
+    </HBox>
+    </layout:VerticalLayout> -->
+    </FlexBox>
+    </uxap:headerContent>
+    <uxap:sections>
+    <uxap:ObjectPageSection id="_IDGenObjectPageSection1"   title="Customer Info" >
+    <uxap:subSections>
+    <uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection1" >
+     <uxap:blocks>
+     	<forms:SimpleForm id="_IDGenSimpleForm1" labelSpanL="4" labelSpanM="4" editable="false"
+					  labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+					  maxContainerCols="2" layout="ResponsiveGridLayout" width="100%">
+
+		<Label id="_IDGenLabel1" text="Email:"/>
+		<Text id="_IDGenText4" />
+
+		<Text id="_IDGenText5" text=" "/>
+
+		<Label id="_IDGenLabel2" text="Contact Number"/>
+		<Text id="_IDGenText6" />
+
+		<Text id="_IDGenText7" text=" "/>
+
+		<Label id="_IDGenLabel3" text="Purchased Till Now"/>
+		<Text id="_IDGenText8" />
+
+	</forms:SimpleForm>
+     </uxap:blocks>
+    </uxap:ObjectPageSubSection>
+    </uxap:subSections>
+    </uxap:ObjectPageSection>
+    <uxap:ObjectPageSection id="_IDGenObjectPageSection2"  title="Purchases"  >
+    <uxap:subSections>
+    <uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection2" >
+    <Table id="_IDGenTable1"  items="{/items}"  >
+    <columns>
+    <Column id="_IDGenColumn1"  hAlign="Center" >
+    <Text id="_IDGenText9"  text="ID" ></Text>
+    </Column>
+    <Column id="_IDGenColumn2"  hAlign="Center" >
+    <Text id="_IDGenText10"  text="ItemName" ></Text>
+    </Column>
+    <Column id="_IDGenColumn3" hAlign="Center" >
+    <Text id="_IDGenText11"  text="ItemCost" ></Text>
+    </Column>
+    <Column id="_IDGenColumn4"  hAlign="Center" >
+    <Text id="_IDGenText12" text="PurchaseDate" ></Text>
+    </Column>
+    </columns>
+    <items>
+    <ColumnListItem id="_IDGenColumnListItem1" >
+    <Text id="_IDGenText15"  text="{ID}" ></Text>
+        <Text id="_IDGenText16"  text="{ItemName}" ></Text>
+          <Text id="_IDGenText17"  text="{ItemCost}" ></Text>
+            <Text id="_IDGenText18"  text="{PurchaseDate}" ></Text>
+
+    </ColumnListItem>
+    </items>
+    </Table>
+    </uxap:ObjectPageSubSection>
+    </uxap:subSections>
+    
+    </uxap:ObjectPageSection>
+    </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

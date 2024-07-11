@@ -87,6 +87,9 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "oGmodel": {
+        "type": "sap.ui.model.json.JSONModel"
       }
     },
     "resources": {
@@ -103,15 +106,24 @@
         "async": true,
         "viewPath": "customerlog.view",
         "controlAggregation": "pages",
-        "controlId": "app",
+        "controlId": "_IDGenFlexibleColumnLayout1",
         "clearControlAggregation": false
       },
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
-            "TargetView1"
+            "TargetView1",
+            "View2"
+          ]
+        },
+        {
+          "name": "View2",
+          "pattern": "View2",
+          "target": [
+            "TargetView1",
+            "View2"
           ]
         }
       ],
@@ -120,9 +132,19 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
+          "controlAggregation": "beginColumnPages",
           "viewId": "View1",
           "viewName": "View1"
+        },
+        "View2": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "controlAggregation": "midColumnPages",
+          "viewId": "View2",
+          "viewName": "View2"
         }
+
       }
     },
     "rootView": {

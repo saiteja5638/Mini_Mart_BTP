@@ -1,7 +1,47 @@
 <mvc:View controllerName="customerlog.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:uxap="sap.uxap"
+    height="100%"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+  <uxap:ObjectPageLayout id="_IDGenObjectPageLayout1" 
+       enableLazyLoading="true"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false" >
+   <uxap:headerTitle>
+   <uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
+   <uxap:expandedHeading>
+   <Title id="_IDGenTitle1"   text="Customer Log Info" ></Title>
+   </uxap:expandedHeading>
+   </uxap:ObjectPageDynamicHeaderTitle>
+   </uxap:headerTitle>
+   <uxap:headerContent>
+   <FlexBox id="_IDGenFlexBox1" wrap="Wrap">
+    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://w7.pngwing.com/pngs/539/701/png-transparent-customer-relationship-management-business-customer-relationship-management-customer-service-customer-company-service-people-thumbnail.png" ></Avatar>
+     <!-- <HBox id="_IDGenHBox1"   >
+     <HBox id="_IDGenHBox2" >
+     <Text id="_IDGenText1"  text="Employee Name:" class="sapUiSmallMarginEnd sapUiTinyMarginTop"  ></Text>
+     <SearchField id="_IDGenSearchField1"   placeholder="*******"  class="sapUiSmallMarginEnd" ></SearchField>
+     </HBox>
+      <HBox id="_IDGenHBox3"  class="sapUiSmallMarginBegin" >
+     <Text id="_IDGenText2"  text="Designation:" class="sapUiSmallMarginEnd sapUiTinyMarginTop"  ></Text>
+     <SearchField id="_IDGenSearchField2"   placeholder="*******"  class="sapUiSmallMarginEnd" ></SearchField>
+     </HBox>
+     </HBox> -->
+   </FlexBox>
+   </uxap:headerContent>
+   <uxap:sections>
+   <uxap:ObjectPageSection id="_IDGenObjectPageSection1" >
+   <uxap:subSections>
+   <uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection1" >
+   <List id="_IDGenLi55st1"   items="{/Customers}"  mode="SingleSelectMaster"  selectionChange="on_trigger"  >
+   <items>
+   <StandardListItem id="_IDGenStandardListItem1" icon="https://w7.pngwing.com/pngs/448/92/png-transparent-customer-service-business-customer-relationship-management-sales-business-group-company-service-people-thumbnail.png" title="NAME :{Name}"  description="Email :{Email}"   info="{Branch}" type="Navigation" ></StandardListItem>
+   </items>
+   </List>
+   </uxap:ObjectPageSubSection>
+   </uxap:subSections>
+   </uxap:ObjectPageSection>
+   </uxap:sections>
+   </uxap:ObjectPageLayout>
 </mvc:View>

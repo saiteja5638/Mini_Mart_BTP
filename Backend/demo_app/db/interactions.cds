@@ -40,6 +40,7 @@ entity Customers {
     key ID               : UUID;
         Name             : String(100);
         Email            : String(100);
+        CONTACT           : String(10);
         PurchasedTillNow : Decimal(15, 2);
         Branch           : String;
         purchases        : Composition of many CustomerPurchases
