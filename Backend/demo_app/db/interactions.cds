@@ -87,3 +87,15 @@ entity DEALERS {
         MARGIN:String(10);
         CONTACT:String(10);     
 }
+
+entity Sales {
+   key ID:String(40);
+       PLANT_NAME:String(10);
+       ItemName :String(20);
+       QUAN:String(20);
+       REVENUE:String;
+       LEVEL:String(10);
+       EXPECTED :String(10);
+       DURATION :String(30);
+
+}
