@@ -37,8 +37,7 @@
 					<m:Link text="{PLANT_EMAIL}"/>
 				</layout:VerticalLayout>
 
-				
-
+		
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
 					<m:Label text="{PLANT_LOC}" design="Bold"/>
 				
@@ -68,7 +67,7 @@
 			<ObjectPageSubSection  title="Employee Log" >
 			<m:List   items="{/items}" id="List_employee"  >
 			<m:items>
-			<m:StandardListItem  title="{Name}"   description="{Email}"  info="{Role}" infoState="Success" infoStateInverted="true"  ></m:StandardListItem>
+			<m:StandardListItem  title="Name:{Name}"   description="Email: {Email}"  info="Designation: {Role}" infoState="Success" infoStateInverted="true"  ></m:StandardListItem>
 			</m:items>
 			</m:List>
 			</ObjectPageSubSection>
@@ -88,7 +87,7 @@
 				/> -->
                 <m:List  id="List"  items="{/items}"   >
 				<m:items>
-				<m:StandardListItem  title="{Name}"  description="{Email}"  info="{PurchasedTillNow}"   infoState="Success"  infoStateInverted="true" ></m:StandardListItem>
+				<m:StandardListItem  title="Customer Name:{Name}"  description=" Email:{Email}"  info="Customer PurchasedTillNow:{PurchasedTillNow}"   infoState="Success"  infoStateInverted="true" ></m:StandardListItem>
 				</m:items>
 				</m:List>
 				</ObjectPageSubSection> 

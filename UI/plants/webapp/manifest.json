@@ -32,6 +32,7 @@
           "semanticObject": "Object",
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
+          "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/branch-office-2337474-1940659.png?f=webp&w=256",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
