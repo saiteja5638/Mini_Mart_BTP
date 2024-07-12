@@ -4,8 +4,9 @@
     xmlns:f="sap.f"
     xmlns="sap.m">
     <App id="app">
-      <f:FlexibleColumnLayout id="_IDGenFlexibleColumnLayout1" >
+      <f:FlexibleColumnLayout id="oFcl" layout="{layoutModel>/layout}" backgroundDesign="Solid">
   
   </f:FlexibleColumnLayout>
     </App>
 </mvc:View>
+

@@ -1,11 +1,101 @@
 <mvc:View controllerName="plants.controller.View2"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="page2">
-        <ObjectHeader id="_IDGenObjectHeader1" 
-        
-        >
-        
-        </ObjectHeader> 
-    </Page>
+    xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.uxap" displayBlock="true" height="100%"
+    xmlns:m="sap.m">
+    <!-- <Page id="page" title="page2"> -->
+   
+        <ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true"
+		beforeNavigate="onBeforeNavigate"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false"
+		sectionChange="onSectionChange">
+		<headerTitle>
+        	<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title id="idHeading" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Avatar id="idImg" class="sapUiTinyMarginEnd" />
+						<m:Title id="idSnapHead" wrapping="true" />
+					</m:FlexBox>
+				</snappedHeading>
+
+			
+
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent >
+			<m:FlexBox id="idFlex" binding="{/items}" wrap="Wrap" fitContainer="true">
+				<m:Avatar class="sapUiSmallMarginEnd" src="{PLANT_AVATAR}" displaySize="L" />
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Link text="{PLANT_CONT}"/>
+					<m:Link text="{PLANT_EMAIL}"/>
+				</layout:VerticalLayout>
+
+				
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="{PLANT_LOC}" design="Bold"/>
+				
+				</layout:VerticalLayout>
+
+			</m:FlexBox>
+		</headerContent>
+        	<sections>
+			<!-- <ObjectPageSection titleUppercase="false" id="idEmp" title="Employees">
+            <subSections>
+				<ObjectPageSubSection id="idList1" titleUppercase="false" >
+					 <m:List id="idEmpList" items="{/items}"
+				headerText="Employee Details">
+					<m:StandardListItem
+				title="{Name}"
+				description="{Role}"
+				info="{PhoneNumber}"
+				infoState="Warning"
+				/>
+	
+					 </m:List>
+				</ObjectPageSubSection>
+			</subSections>
+            </ObjectPageSection> -->
+			<ObjectPageSection >
+			<subSections>
+			<ObjectPageSubSection  title="Employee Log" >
+			<m:List   items="{/items}" id="List_employee"  >
+			<m:items>
+			<m:StandardListItem  title="{Name}"   description="{Email}"  info="{Role}" infoState="Success" infoStateInverted="true"  ></m:StandardListItem>
+			</m:items>
+			</m:List>
+			</ObjectPageSubSection>
+			</subSections>
+			</ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="idCust" title="Customers">
+            <subSections>
+				<ObjectPageSubSection id="idList2"  title="Customer Log">
+					 <!-- <m:Text text="Customer Details"/>  -->
+					 <!-- <m:List id="idCustList" items="{/items}"
+				headerText="Customer Details"></m:List>
+					 <m:StandardListItem
+				title="{Name}"
+				description="{CONTACT}"
+				info="{PurchasedTillNow}"
+				infoState="Warning"
+				/> -->
+                <m:List  id="List"  items="{/items}"   >
+				<m:items>
+				<m:StandardListItem  title="{Name}"  description="{Email}"  info="{PurchasedTillNow}"   infoState="Success"  infoStateInverted="true" ></m:StandardListItem>
+				</m:items>
+				</m:List>
+				</ObjectPageSubSection> 
+			</subSections>
+            </ObjectPageSection>
+            </sections>
+
+       </ObjectPageLayout>
+    <!-- </Page> -->
 </mvc:View>

@@ -1,8 +1,8 @@
 <mvc:View controllerName="plants.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m" xmlns:l="sap.ui.layout">
     <Page id="page" title="{i18n>title}">
-        <List  items="{/PLANTS}" mode="SingleSelectMaster"  >
+        <List  items="{/PLANTS}" mode="SingleSelectMaster" id="idList" selectionChange="onItem">
         <items>
         <StandardListItem  title="{PLANT_NAME}"  description="{PLANT_LOC}"  info="{PLANT_REVENUE}"  icon="{PLANT_AVATAR}" type="Navigation" ></StandardListItem>
         </items>
