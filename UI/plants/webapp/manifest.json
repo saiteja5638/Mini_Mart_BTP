@@ -32,6 +32,7 @@
           "semanticObject": "Object",
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
+          "icon": "https://cdn-icons-png.flaticon.com/512/3347/3347874.png",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"

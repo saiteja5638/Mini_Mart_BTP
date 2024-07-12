@@ -33,6 +33,7 @@
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
+          "icon": "https://cdn3.iconfinder.com/data/icons/user-group-3/60/employee__profile__avatar__user__man-512.png",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"

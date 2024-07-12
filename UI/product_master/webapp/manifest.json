@@ -33,6 +33,8 @@
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
+          "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/product-5806313-4863042.png?f=webp",
+          "shortTitle":"product",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"

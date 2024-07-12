@@ -28,7 +28,7 @@ xmlns:forms="sap.ui.layout.form"
     </uxap:headerTitle>
     <uxap:headerContent>
     <FlexBox id="_IDGenFlexBox1"  wrap="Wrap" >
-    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg" ></Avatar>
+    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://cdn3.iconfinder.com/data/icons/user-group-3/60/employee__profile__avatar__user__man-512.png" ></Avatar>
     <layout:VerticalLayout id="_IDGenVerticalLayout1"  class="sapUiSmallMarginBeginEnd" >
     <HBox id="_IDGenHBox2" >
     <Title id="_IDGenText2"   text="Email: "  ></Title>

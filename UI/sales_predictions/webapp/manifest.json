@@ -33,7 +33,7 @@
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
-          "icon": "sap-icon://BusinessSuiteInAppSymbols/icon-production",
+          "icon": "https://cdn-icons-png.flaticon.com/512/8070/8070604.png",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"

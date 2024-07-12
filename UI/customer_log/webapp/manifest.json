@@ -33,6 +33,7 @@
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
+          "icon": "https://cdn2.iconfinder.com/data/icons/user-23/512/User_Customers.png",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"

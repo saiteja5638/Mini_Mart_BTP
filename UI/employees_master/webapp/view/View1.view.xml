@@ -10,13 +10,16 @@
    <uxap:headerTitle>
    <uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
    <uxap:expandedHeading>
-   <Title id="_IDGenTitle1"   text="King1" ></Title>
+   <Title id="_IDGenTitle1"   text="Employee Profilo's" ></Title>
    </uxap:expandedHeading>
+   <uxap:snappedHeading>
+     <Title id="_IDGenTitle25"   text="Employee Profilo's" ></Title>
+   </uxap:snappedHeading>
    </uxap:ObjectPageDynamicHeaderTitle>
    </uxap:headerTitle>
    <uxap:headerContent>
    <FlexBox id="_IDGenFlexBox1" wrap="Wrap">
-    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://cdn-icons-png.freepik.com/256/912/912318.png?semt=ais_hybrid" ></Avatar>
+    <Avatar id="_IDGenAvatar1"  class="sapUiSmallMarginEnd" displaySize="L"  src="https://cdn3.iconfinder.com/data/icons/user-group-3/60/employee__profile__avatar__user__man-512.png" ></Avatar>
      <HBox id="_IDGenHBox1"   >
      <HBox id="_IDGenHBox2" >
      <Text id="_IDGenText1"  text="Employee Name:" class="sapUiSmallMarginEnd sapUiTinyMarginTop"  ></Text>
