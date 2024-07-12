@@ -33,6 +33,7 @@
           "action": "DISPLAY",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
+          "icon": "sap-icon://BusinessSuiteInAppSymbols/icon-production",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
