@@ -116,6 +116,24 @@ function (Controller,fioriLibary) {
         onClose_emp:function()
         {
             that.employee.close()
+        },
+        onUpdate_empBran:function()
+        {
+            let getSelected = sap.ui.getCore().byId("list_employee").getSelectedItems()[0].getBindingContext().getObject()
+            var itemDet = that.oGModel.getProperty("/selItem")
+            getSelected.forEach(element => {
+                element['Branch'] = itemDet.PLANT_NAME;
+                that.getOwnerComponent().getModel().update("/Employees/"+element.ID,element,{
+                    success:function(response)
+                    {
+                        console.log(response)
+                    },
+                    error:function(error)
+                    {
+                        console.log(error)
+                    }
+                })
+            });
         }
     });
 });

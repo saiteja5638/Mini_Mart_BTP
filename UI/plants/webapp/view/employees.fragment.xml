@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:tnt="sap.tnt"   xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"  >
 <Dialog  id="employees"  title="Assign Employee's"  titleAlignment="Center" contentHeight="50%" contentWidth="50%" >
 <VBox  >
-<List items="{/items}" id="list_employee" mode="MultiSelect" >
+<List items="{/items}" id="list_employee" mode="MultiSelect"  >
 <items>
 <StandardListItem  title="{Name}"  info="{Branch}" description="{Role}" infoState="Success"  infoStateInverted="true" ></StandardListItem>
 </items>
@@ -10,7 +10,7 @@
 <footer>
 <Toolbar >
 <ToolbarSpacer ></ToolbarSpacer>
-<Button text="assign" type="Emphasized" press="submit_create"  ></Button>
+<Button text="assign" type="Emphasized" press="onUpdate_empBran"  ></Button>
 <Button   text="close" type="Reject"  press="onClose_emp"  ></Button>
 </Toolbar>
 </footer>
