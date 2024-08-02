@@ -12,6 +12,11 @@ function (Controller,fioriLibary) {
             that=this;
             that.oGModel = that.getOwnerComponent().getModel("oGModel")
             that.oDataModel = that.getOwnerComponent().getModel();
+
+            if (!that.employee) {
+
+                that.employee = sap.ui.xmlfragment("plants.view.employees", that);
+            }
          
         },
         itemDetails:function(){
@@ -90,6 +95,27 @@ function (Controller,fioriLibary) {
                     console.log(error)
                 }
             })
+        },
+        open_employee_box:function()
+        {
+            that.getOwnerComponent().getModel().read("/Employees",{
+                success:function(response)
+                {
+                    let data  = response.results;
+
+                    let oModel = new sap.ui.model.json.JSONModel({
+                        items:data
+                    })
+
+                    sap.ui.getCore().byId("list_employee").setModel(oModel)
+                    that.employee.open()
+                }
+            })
+         
+        },
+        onClose_emp:function()
+        {
+            that.employee.close()
         }
     });
 });

@@ -22,6 +22,7 @@
 					</m:FlexBox>
 				</snappedHeading>
 				<actions>
+				<m:Button type="Success" text="Add Employee" press="open_employee_box" ></m:Button>
 				<m:Button text="Delete" icon="sap-icon://delete" type="Reject" press="onDelete" ></m:Button>
 				<m:Button icon="sap-icon://decline"  press="Close_tab"  ></m:Button>
 				</actions>

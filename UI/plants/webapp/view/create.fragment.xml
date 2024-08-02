@@ -21,6 +21,10 @@
 <Label text="HEAD" ></Label>
 <Input  width="100%" id="phead" ></Input>
 </FlexBox>
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="AVATAR LINK" ></Label>
+<Input  width="100%" id="avatar" ></Input>
+</FlexBox>
 </VBox>
 <footer>
 <Toolbar >

@@ -50,7 +50,8 @@ function (Controller) {
                 PLANT_LOC:sap.ui.getCore().byId("lname").getValue(),
                 PLANT_CONT:sap.ui.getCore().byId("pcontact").getValue(),
                 PLANT_EMAIL:sap.ui.getCore().byId("pemail").getValue(),
-                PLANT_HEAD:sap.ui.getCore().byId("phead").getValue()
+                PLANT_HEAD:sap.ui.getCore().byId("phead").getValue(),
+                PLANT_AVATAR:sap.ui.getCore().byId("avatar").getValue()
             }
 
             that.getOwnerComponent().getModel().create('/PLANTS',obj,{
