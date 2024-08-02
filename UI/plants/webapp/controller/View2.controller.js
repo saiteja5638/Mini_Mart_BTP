@@ -1,7 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    'sap/f/library'
 ],
-function (Controller) {
+function (Controller,fioriLibary) {
     "use strict";
     var that;
 
@@ -67,38 +68,28 @@ function (Controller) {
                     console.log(er)
                 }
             })
-            // that.oDataModel.read("/Employees",{
-            //     success:function(oData){
-            //         for(var i=0;i<oData.results.length;i++){
-            //             if(that.selBranch == oData.results[i].Branch){
-            //                 aEmp.push(oData.results[i])
-            //             }
-            //         }
-            //         var oModel = new sap.ui.model.json.JSONModel();
-            //         oModel.setData({
-            //             items:aEmp
-            //         })
-            //         that.getView().byId("idEmpList").setModel(oModel);
-            //     },
-            //     error:function(){}
-            // })
 
-            
-            // that.oDataModel.read("/Customers",{
-            //     success:function(oData){
-            //         for(var i=0;i<oData.results.length;i++){
-            //             if(that.selBranch == oData.results[i].Branch){
-            //                 aCust.push(oData.results[i])
-            //             }
-            //         }
-            //         var oModel = new sap.ui.model.json.JSONModel();
-            //         oModel.setData({
-            //             items:aCust
-            //         })
-            //         that.getView().byId("idCustList").setModel(oModel);
-            //     },
-            //     error:function(){}
-            // })
+        },
+        Close_tab: function () {
+            var oView = this.oView.getParent().getParent();
+
+            oView.setLayout(fioriLibary.LayoutType.OneColumn);
+        },
+        onDelete:function()
+        {
+            var itemDet = that.oGModel.getProperty("/selItem")
+
+            that.getOwnerComponent().getModel().remove("/PLANTS/"+itemDet.PLANT_ID,{
+                success:function(response)
+                {
+                    sap.m.MessageToast.show("Branch Deleted")
+                    that.Close_tab()
+                },
+                error:function(error)
+                {
+                    console.log(error)
+                }
+            })
         }
     });
 });

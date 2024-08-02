@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:tnt="sap.tnt"   xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"  >
+<Dialog  id="createTask"  title="Create Plant"  titleAlignment="Center"  >
+<VBox  >
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="PLANT NAME" ></Label>
+<Input  width="100%"  id="pname"  ></Input>
+</FlexBox>
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="LOCATION" ></Label>
+<Input  width="100%" id="lname" ></Input>
+</FlexBox>
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="CONTACT" ></Label>
+<Input  width="100%" id="pcontact" ></Input>
+</FlexBox>
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="EMAIL" ></Label>
+<Input  width="100%"  id="pemail" ></Input>
+</FlexBox>
+<FlexBox  direction="Column" class="sapUiTinyMargin"  >  
+<Label text="HEAD" ></Label>
+<Input  width="100%" id="phead" ></Input>
+</FlexBox>
+</VBox>
+<footer>
+<Toolbar >
+<ToolbarSpacer ></ToolbarSpacer>
+<Button text="Create" type="Emphasized" press="submit_create"  ></Button>
+<Button   text="close" type="Reject"  press="close_"  ></Button>
+</Toolbar>
+</footer>
+</Dialog>
+</core:FragmentDefinition>

@@ -3,6 +3,12 @@
     xmlns="sap.m" xmlns:l="sap.ui.layout">
     <Page id="page" title="{i18n>title}">
         <List  items="{/PLANTS}" mode="SingleSelectMaster" id="idList" selectionChange="onItem">
+        <headerToolbar>
+        <Toolbar >
+        <ToolbarSpacer ></ToolbarSpacer>
+        <Button text="Create"   press="create_" type="Emphasized" ></Button>
+        </Toolbar>
+        </headerToolbar>
         <items>
         <StandardListItem  title="{PLANT_NAME}"  description="{PLANT_LOC}"  info="{PLANT_REVENUE}"  icon="{PLANT_AVATAR}" type="Navigation" ></StandardListItem>
         </items>
