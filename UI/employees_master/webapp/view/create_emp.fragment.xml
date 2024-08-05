@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:tnt="sap.tnt"   xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"  >
+<Dialog  id="createTask"  title="Create Employee"  titleAlignment="Center"  >
+<VBox id="_IDGenVBox1" >
+<FlexBox id="_IDGenFlexBox1"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel1" text="EMPLOYEE NAME" ></Label>
+<Input  width="100%"  id="pname"  ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox2"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel2" text="EMAIL" ></Label>
+<Input id="_IDGenInput1"  width="100%"  ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox3"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel3" text="CONTACT" ></Label>
+<Input id="_IDGenInput2"  width="100%"  ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox4"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel4" text="ADDRESS" ></Label>
+<Input id="_IDGenInput3"  width="100%"   ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox5"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel5" text="ROLE" ></Label>
+<Input id="_IDGenInput4"  width="100%"  ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox6"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel6" text="SALARY" ></Label>
+<Input id="_IDGenInput5"  width="100%"  ></Input>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox7"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel7" text="DATE OF JOINING" ></Label>
+<DatePicker id="_IDGenDatePicker1" ></DatePicker>
+</FlexBox>
+<FlexBox id="_IDGenFlexBox8"  direction="Column" class="sapUiTinyMargin"  >  
+<Label id="_IDGenLabel8" text="BRANCH" ></Label>
+<ComboBox id="_IDGenComboBox1" width="100%" >
+<items>
+<core:Item id="_IDGenItem1"  text="ALPHA"  ></core:Item>
+</items>
+</ComboBox>
+</FlexBox>
+</VBox>
+<footer>
+<Toolbar id="_IDGenToolbar1" >
+<ToolbarSpacer id="_IDGenToolbarSpacer1" ></ToolbarSpacer>
+<Button id="_IDGenButton1" text="Create" type="Emphasized" press="submit_create"  ></Button>
+<Button id="_IDGenButton2"   text="close" type="Reject"  press="close_"  ></Button>
+</Toolbar>
+</footer>
+</Dialog>
+</core:FragmentDefinition>

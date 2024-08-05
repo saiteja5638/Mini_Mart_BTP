@@ -9,6 +9,9 @@
 		upperCaseAnchorBar="false" >
    <uxap:headerTitle>
    <uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
+   <uxap:actions>
+   <Button text="Create" press="create_"  type="Emphasized" > </Button>
+   </uxap:actions>
    <uxap:expandedHeading>
    <Title id="_IDGenTitle1"   text="Employee Profilo's" ></Title>
    </uxap:expandedHeading>
