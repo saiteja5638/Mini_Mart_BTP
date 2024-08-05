@@ -20,8 +20,9 @@
     <Text id="_IDGenText1" text="Example 2"/>
     </uxap:expandedContent>
     <uxap:actions>
-     <Button id="_IDGenButton1"   icon="sap-icon://decline" press="Close_tab" ></Button>
-     <Button id="_IDGenButton2" text="Edit" press="Edit_Quan" type="Success" ></Button>
+    
+     <Button id="_IDGenButton2" text="Edit" press="Edit_Quan" type="Emphasized" ></Button>
+      <Button id="_IDGenButton1"   icon="sap-icon://decline" press="Close_tab" ></Button>
     </uxap:actions>
     </uxap:ObjectPageDynamicHeaderTitle>
     </uxap:headerTitle>
