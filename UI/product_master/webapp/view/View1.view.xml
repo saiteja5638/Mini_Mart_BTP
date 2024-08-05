@@ -1,8 +1,11 @@
-<mvc:View xmlns:cards="sap.f.cards" xmlns:f="sap.f" controllerName="productmaster.controller.View1"
+<mvc:View xmlns:vk="sap.ui.vk" xmlns:cards="sap.f.cards" xmlns:f="sap.f" controllerName="productmaster.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
- 
+		<Toolbar >
+		<ToolbarSpacer ></ToolbarSpacer>
+		<Button  text="Create Product"  press="create_" type="Emphasized" ></Button>
+		</Toolbar>
 		<f:GridList
 			id="gridList"
 			selectionChange="handle_press"
