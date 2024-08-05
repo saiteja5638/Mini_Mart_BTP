@@ -31,7 +31,7 @@
 </FlexBox>
 <FlexBox id="_IDGenFlexBox8"  direction="Column" class="sapUiTinyMargin"  >  
 <Label id="_IDGenLabel8" text="BRANCH" ></Label>
-<ComboBox id="_IDGenComboBox1" width="100%" >
+<ComboBox id="_IDGenComboBox1" width="100%"   >
 <items>
 <core:Item id="_IDGenItem1"  text="ALPHA"  ></core:Item>
 </items>

@@ -33,6 +33,7 @@ function (Controller,fioriLibary) {
             sap.ui.getCore().byId("_IDGenInput3").setValue("")
             sap.ui.getCore().byId("_IDGenInput4").setValue("")
             sap.ui.getCore().byId("_IDGenInput5").setValue("")
+            
             that.create.open()
         },
         close_:function()
@@ -42,20 +43,36 @@ function (Controller,fioriLibary) {
         submit_create:function()
         {
             let obj = {
-                PLANT_ID: "EMP"+ Math.floor(Math.random()*85222),
-                PLANT_NAME:sap.ui.getCore().byId("pname").getValue(),
-                PLANT_LOC:sap.ui.getCore().byId("lname").getValue(),
-                PLANT_CONT:sap.ui.getCore().byId("pcontact").getValue(),
-                PLANT_EMAIL:sap.ui.getCore().byId("pemail").getValue(),
-                PLANT_HEAD:sap.ui.getCore().byId("phead").getValue(),
-                PLANT_AVATAR:sap.ui.getCore().byId("avatar").getValue()
+                Name:sap.ui.getCore().byId("pname").getValue(),
+                Email:sap.ui.getCore().byId("_IDGenInput1").getValue(),
+                PhoneNumber:sap.ui.getCore().byId("_IDGenInput2").getValue(),
+                Address:sap.ui.getCore().byId("_IDGenInput3").getValue(),
+                Role:sap.ui.getCore().byId("_IDGenInput4").getValue(),
+                Salary:parseInt(sap.ui.getCore().byId("_IDGenInput5").getValue()),
+                HireDate:sap.ui.getCore().byId("_IDGenDatePicker1").mProperties.dateValue,
+                Branch:sap.ui.getCore().byId("_IDGenComboBox1").getSelectedItem().getText()
             }
 
             that.getOwnerComponent().getModel().create('/Employees',obj,{
                 success:function(response)
                 {
                     console.log(response)
-                    that.create.close()
+                    debugger
+                    let exp ={
+                        EmployeeID_ID:response.ID
+                    }
+                    that.getOwnerComponent().getModel().create('/EmployeeExperience',exp,{
+                        success:function(res)
+                        {
+                            console.log(res)
+                            that.create.close()
+                        },
+                        error:function(err)
+                        {
+                            console.log(err)
+                        }
+                    })
+                   
                 },
                 error:function(error)
                 {
