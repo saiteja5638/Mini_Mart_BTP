@@ -11,6 +11,18 @@ function (Controller,fioriLibary,Filter,FilterOperator) {
         onInit: function () {
             that = this;
         },
+        Edit_Quan:function()
+        {
+            let table = this.byId("_IDGenTable1")
+            
+            table.getItems().forEach(element => {
+                element.getCells().forEach(element=>{
+                    if (element.mBindingInfos.text==undefined) {
+                        element.setEditable(true)
+                    }
+                })
+            });
+        },
         Close_tab:function()
         {
             var oView = this.oView.getParent().getParent();
