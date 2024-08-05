@@ -14,14 +14,29 @@ function (Controller,fioriLibary,Filter,FilterOperator) {
         Edit_Quan:function()
         {
             let table = this.byId("_IDGenTable1")
-            
-            table.getItems().forEach(element => {
-                element.getCells().forEach(element=>{
-                    if (element.mBindingInfos.text==undefined) {
-                        element.setEditable(true)
-                    }
-                })
-            });
+
+            if (that.byId("_IDGenButton2").getText()=='Save') {
+                that.byId("_IDGenButton2").setText("Edit")
+                           table.getItems().forEach(element => {
+                    element.getCells().forEach(element=>{
+                        if (element.mBindingInfos.text==undefined) {
+                            element.setEditable(false)
+                        }
+                    })
+                });
+            } else {
+                that.byId("_IDGenButton2").setText("Save")
+                table.getItems().forEach(element => {
+                    element.getCells().forEach(element=>{
+                        if (element.mBindingInfos.text==undefined) {
+                            element.setEditable(true)
+                        }
+                    })
+                });
+            }
+           
+           
+
         },
         Close_tab:function()
         {
