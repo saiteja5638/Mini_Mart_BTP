@@ -99,3 +99,11 @@ entity Sales {
        DURATION :String(30);
 
 }
+
+entity User_Data {
+    key ID         : UUID;
+        USER_NAME  : String(40);
+        USER_EMAIL : String(40);
+        USER_CONT  : String(15);
+        USER_PASS  : String(40);
+}

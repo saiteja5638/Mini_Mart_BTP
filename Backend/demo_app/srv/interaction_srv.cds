@@ -11,4 +11,5 @@ service CatalogService {
     entity DEALERS            as projection on interactions.DEALERS;
     entity QUAN_INFO          as projection on interactions.QUAN_INFO;
      entity Sales          as projection on interactions.Sales;
+     entity User_Data as projection on interactions.User_Data;
 }

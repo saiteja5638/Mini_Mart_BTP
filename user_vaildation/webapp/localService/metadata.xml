@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="CatalogService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="PLANTS" EntityType="CatalogService.PLANTS"/>
+                <EntitySet Name="Employees" EntityType="CatalogService.Employees"/>
+                <EntitySet Name="EmployeeExperience" EntityType="CatalogService.EmployeeExperience"/>
+                <EntitySet Name="Customers" EntityType="CatalogService.Customers"/>
+                <EntitySet Name="CustomerPurchases" EntityType="CatalogService.CustomerPurchases"/>
+                <EntitySet Name="MaterialManagement" EntityType="CatalogService.MaterialManagement"/>
+                <EntitySet Name="DEALERS" EntityType="CatalogService.DEALERS"/>
+                <EntitySet Name="QUAN_INFO" EntityType="CatalogService.QUAN_INFO"/>
+                <EntitySet Name="Sales" EntityType="CatalogService.Sales"/>
+                <EntitySet Name="User_Data" EntityType="CatalogService.User_Data"/>
+                <AssociationSet Name="EmployeeExperience_EmployeeID" Association="CatalogService.EmployeeExperience_EmployeeID">
+                    <End Role="EmployeeExperience" EntitySet="EmployeeExperience"/>
+                    <End Role="Employees" EntitySet="Employees"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerPurchases_CustomerID" Association="CatalogService.CustomerPurchases_CustomerID">
+                    <End Role="CustomerPurchases" EntitySet="CustomerPurchases"/>
+                    <End Role="Customers" EntitySet="Customers"/>
+                </AssociationSet>
+                <AssociationSet Name="DEALERS_DEAL_MAT" Association="CatalogService.DEALERS_DEAL_MAT">
+                    <End Role="DEALERS" EntitySet="DEALERS"/>
+                    <End Role="MaterialManagement" EntitySet="MaterialManagement"/>
+                </AssociationSet>
+                <AssociationSet Name="QUAN_INFO_MAT_QUAN" Association="CatalogService.QUAN_INFO_MAT_QUAN">
+                    <End Role="QUAN_INFO" EntitySet="QUAN_INFO"/>
+                    <End Role="MaterialManagement" EntitySet="MaterialManagement"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="PLANTS">
+                <Key>
+                    <PropertyRef Name="PLANT_ID"/>
+                </Key>
+                <Property Name="PLANT_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="PLANT_NAME" Type="Edm.String"/>
+                <Property Name="PLANT_LOC" Type="Edm.String"/>
+                <Property Name="PLANT_AVATAR" Type="Edm.String"/>
+                <Property Name="PLANT_CONT" Type="Edm.String"/>
+                <Property Name="PLANT_EMAIL" Type="Edm.String"/>
+                <Property Name="PLANT_HEAD" Type="Edm.String"/>
+                <Property Name="PLANT_REVENUE" Type="Edm.String"/>
+                <Property Name="PLANT_CUST_COUNT" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Employees">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="100"/>
+                <Property Name="PhoneNumber" Type="Edm.String" MaxLength="15"/>
+                <Property Name="Address" Type="Edm.String" MaxLength="255"/>
+                <Property Name="Role" Type="Edm.String" MaxLength="50"/>
+                <Property Name="Salary" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="HireDate" Type="Edm.String"/>
+                <Property Name="Branch" Type="Edm.String"/>
+                <NavigationProperty Name="experiences" Relationship="CatalogService.EmployeeExperience_EmployeeID" FromRole="Employees" ToRole="EmployeeExperience"/>
+            </EntityType>
+            <EntityType Name="EmployeeExperience">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <NavigationProperty Name="EmployeeID" Relationship="CatalogService.EmployeeExperience_EmployeeID" FromRole="EmployeeExperience" ToRole="Employees"/>
+                <Property Name="EmployeeID_ID" Type="Edm.Guid"/>
+                <Property Name="CompanyName" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Role" Type="Edm.String" MaxLength="50"/>
+                <Property Name="StartDate" Type="Edm.String"/>
+                <Property Name="EndDate" Type="Edm.String"/>
+                <Property Name="Responsibilities" Type="Edm.String" MaxLength="1000"/>
+            </EntityType>
+            <EntityType Name="Customers">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="100"/>
+                <Property Name="CONTACT" Type="Edm.String" MaxLength="10"/>
+                <Property Name="PurchasedTillNow" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="Branch" Type="Edm.String"/>
+                <NavigationProperty Name="purchases" Relationship="CatalogService.CustomerPurchases_CustomerID" FromRole="Customers" ToRole="CustomerPurchases"/>
+            </EntityType>
+            <EntityType Name="CustomerPurchases">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <NavigationProperty Name="CustomerID" Relationship="CatalogService.CustomerPurchases_CustomerID" FromRole="CustomerPurchases" ToRole="Customers"/>
+                <Property Name="CustomerID_ID" Type="Edm.Guid"/>
+                <Property Name="ItemName" Type="Edm.String" MaxLength="100"/>
+                <Property Name="ItemCost" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="PurchaseDate" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="MaterialManagement">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="PRODUCT_NAME" Type="Edm.String" MaxLength="40"/>
+                <Property Name="PRODUCT_DESC" Type="Edm.String" MaxLength="40"/>
+                <Property Name="CUR_DEALER" Type="Edm.String" MaxLength="20"/>
+                <Property Name="AVATAR" Type="Edm.String"/>
+                <Property Name="QUAN_AVAIL" Type="Edm.String" MaxLength="10"/>
+                <NavigationProperty Name="QUAN_INFORM" Relationship="CatalogService.QUAN_INFO_MAT_QUAN" FromRole="MaterialManagement" ToRole="QUAN_INFO"/>
+                <NavigationProperty Name="DEALERS_INFO" Relationship="CatalogService.DEALERS_DEAL_MAT" FromRole="MaterialManagement" ToRole="DEALERS"/>
+            </EntityType>
+            <EntityType Name="DEALERS">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="32" Nullable="false"/>
+                <NavigationProperty Name="DEAL_MAT" Relationship="CatalogService.DEALERS_DEAL_MAT" FromRole="DEALERS" ToRole="MaterialManagement"/>
+                <Property Name="DEAL_MAT_ID" Type="Edm.Guid"/>
+                <Property Name="NAME" Type="Edm.String" MaxLength="32"/>
+                <Property Name="LOCATIION" Type="Edm.String" MaxLength="30"/>
+                <Property Name="PRICE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SEL_PRICE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="MARGIN" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CONTACT" Type="Edm.String" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="QUAN_INFO">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="32" Nullable="false"/>
+                <NavigationProperty Name="MAT_QUAN" Relationship="CatalogService.QUAN_INFO_MAT_QUAN" FromRole="QUAN_INFO" ToRole="MaterialManagement"/>
+                <Property Name="MAT_QUAN_ID" Type="Edm.Guid"/>
+                <Property Name="BRANCH" Type="Edm.String" MaxLength="10"/>
+                <Property Name="QUAN_AVAIL" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ACT_PRICE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SEL_PRICE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="MARGIN" Type="Edm.String" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="Sales">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="PLANT_NAME" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ItemName" Type="Edm.String" MaxLength="20"/>
+                <Property Name="QUAN" Type="Edm.String" MaxLength="20"/>
+                <Property Name="REVENUE" Type="Edm.String"/>
+                <Property Name="LEVEL" Type="Edm.String" MaxLength="10"/>
+                <Property Name="EXPECTED" Type="Edm.String" MaxLength="10"/>
+                <Property Name="DURATION" Type="Edm.String" MaxLength="30"/>
+            </EntityType>
+            <EntityType Name="User_Data">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="USER_NAME" Type="Edm.String" MaxLength="40"/>
+                <Property Name="USER_EMAIL" Type="Edm.String" MaxLength="40"/>
+                <Property Name="USER_CONT" Type="Edm.String" MaxLength="15"/>
+                <Property Name="USER_PASS" Type="Edm.String" MaxLength="40"/>
+            </EntityType>
+            <Association Name="EmployeeExperience_EmployeeID">
+                <End Role="EmployeeExperience" Type="CatalogService.EmployeeExperience" Multiplicity="*"/>
+                <End Role="Employees" Type="CatalogService.Employees" Multiplicity="0..1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="Employees">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="EmployeeExperience">
+                        <PropertyRef Name="EmployeeID_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CustomerPurchases_CustomerID">
+                <End Role="CustomerPurchases" Type="CatalogService.CustomerPurchases" Multiplicity="*"/>
+                <End Role="Customers" Type="CatalogService.Customers" Multiplicity="0..1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="Customers">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="CustomerPurchases">
+                        <PropertyRef Name="CustomerID_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DEALERS_DEAL_MAT">
+                <End Role="DEALERS" Type="CatalogService.DEALERS" Multiplicity="*"/>
+                <End Role="MaterialManagement" Type="CatalogService.MaterialManagement" Multiplicity="0..1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="MaterialManagement">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="DEALERS">
+                        <PropertyRef Name="DEAL_MAT_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="QUAN_INFO_MAT_QUAN">
+                <End Role="QUAN_INFO" Type="CatalogService.QUAN_INFO" Multiplicity="*"/>
+                <End Role="MaterialManagement" Type="CatalogService.MaterialManagement" Multiplicity="0..1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="MaterialManagement">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="QUAN_INFO">
+                        <PropertyRef Name="MAT_QUAN_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
