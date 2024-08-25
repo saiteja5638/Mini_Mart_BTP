@@ -40,7 +40,7 @@ entity Customers {
     key ID               : UUID;
         Name             : String(100);
         Email            : String(100);
-        CONTACT           : String(10);
+        CONTACT          : String(10);
         PurchasedTillNow : Decimal(15, 2);
         Branch           : String;
         purchases        : Composition of many CustomerPurchases
@@ -56,54 +56,90 @@ entity CustomerPurchases {
 }
 
 entity MaterialManagement {
-    key ID              : UUID;
+    key ID           : UUID;
         PRODUCT_NAME : String(40);
-        PRODUCT_DESC :String(40);
-        CUR_DEALER :String(20);
-        AVATAR:String;
-        QUAN_AVAIL:String(10);
-        QUAN_INFORM : Composition of many QUAN_INFO on QUAN_INFORM.MAT_QUAN = $self;
-        DEALERS_INFO : Composition of many DEALERS on DEALERS_INFO.DEAL_MAT = $self;  
+        PRODUCT_DESC : String(40);
+        CUR_DEALER   : String(20);
+        AVATAR       : String;
+        QUAN_AVAIL   : String(10);
+        QUAN_INFORM  : Composition of many QUAN_INFO
+                           on QUAN_INFORM.MAT_QUAN = $self;
+        DEALERS_INFO : Composition of many DEALERS
+                           on DEALERS_INFO.DEAL_MAT = $self;
 }
 
 entity QUAN_INFO {
-    key ID : String(32);
-        MAT_QUAN : Association to MaterialManagement;
-        BRANCH:String(10);
-        QUAN_AVAIL:String(10);
-        ACT_PRICE:String(10);
-        SEL_PRICE:String(10);
-        MARGIN:String(10);
+    key ID         : String(32);
+        MAT_QUAN   : Association to MaterialManagement;
+        BRANCH     : String(10);
+        QUAN_AVAIL : String(10);
+        ACT_PRICE  : String(10);
+        SEL_PRICE  : String(10);
+        MARGIN     : String(10);
 
 }
 
 entity DEALERS {
-    key ID :String(32);
-        DEAL_MAT : Association to MaterialManagement;
-        NAME : String(32);
-        LOCATIION:String(30);
-        PRICE:String(10);
-        SEL_PRICE:String(10);
-        MARGIN:String(10);
-        CONTACT:String(10);     
+    key ID        : String(32);
+        DEAL_MAT  : Association to MaterialManagement;
+        NAME      : String(32);
+        LOCATIION : String(30);
+        PRICE     : String(10);
+        SEL_PRICE : String(10);
+        MARGIN    : String(10);
+        CONTACT   : String(10);
 }
 
 entity Sales {
-   key ID:String(40);
-       PLANT_NAME:String(10);
-       ItemName :String(20);
-       QUAN:String(20);
-       REVENUE:String;
-       LEVEL:String(10);
-       EXPECTED :String(10);
-       DURATION :String(30);
+    key ID         : String(40);
+        PLANT_NAME : String(10);
+        ItemName   : String(20);
+        QUAN       : String(20);
+        REVENUE    : String;
+        LEVEL      : String(10);
+        EXPECTED   : String(10);
+        DURATION   : String(30);
 
 }
 
 entity User_Data {
-    key ID         : UUID;
-        USER_NAME  : String(40);
-        USER_EMAIL : String(40);
-        USER_CONT  : String(15);
-        USER_PASS  : String(40);
+    key ID           : UUID;
+        USER_NAME    : String(40);
+        USER_EMAIL   : String(40);
+        USER_CONT    : String(15);
+        USER_PASS    : String(40);
+        USER_FRIENDS : Composition of many User_Friends
+                           on USER_FRIENDS.FRIENDCOM = $self;
+}
+
+entity User_Friends {
+    key ID            : UUID;
+        FRIENDCOM     : Association to User_Data;
+        USER_NAME     : String(40);
+        USER_EMAIL    : String(40);
+        USER_CONT     : String(15);
+        REALTION_FROM : String(25);
+        USF           : Composition of many ABOUT_FRIEND
+                            on USF.ABOUT = $self;
+}
+
+entity ABOUT_FRIEND {
+    key ID    : UUID;
+        ABOUT : Association to User_Friends;
+        DESC  : String(500);
+        TITLE : String(100);
+        IMG   : String;
+
+}
+
+
+entity Questions_Answers {
+    key ID       : UUID;
+        Question : String(500);
+        OPTIONA  : String(100);
+        OPTIONB  : String(100);
+        OPTIONC  : String(100);
+        OPTIOND  : String(100);
+        ANSWER   : String(100);
+
 }

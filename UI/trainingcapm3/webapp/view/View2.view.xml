@@ -1,0 +1,11 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="trainingcapm3.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}"  showHeader="false"   >
+    <List  items="{/PLANTS}" >
+    <items>
+    <StandardListItem  title="{PLANT_NAME}"  description="{PLANT_LOC}"  info="{PLANT_CONT}" ></StandardListItem>
+    </items>
+    </List>
+    </Page>
+</mvc:View>

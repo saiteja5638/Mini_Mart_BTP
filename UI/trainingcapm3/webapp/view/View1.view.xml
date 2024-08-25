@@ -1,0 +1,22 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="trainingcapm3.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}"  showHeader="false"   >
+       <Toolbar id="_IDGenToolbar1" >
+       <ToolbarSpacer id="_IDGenToolbarSpacer1" ></ToolbarSpacer>
+       <Title id="_IDGenTitle1"  text="Questions" ></Title>
+       <Button text="View2"  press="View2" ></Button>
+       </Toolbar>
+       <List  id="Question_List"  items="{/User_Data}" >
+       <items>
+       <StandardListItem id="_IDGenStandardListItem1"  title="{USER_NAME}"  description="{USER_EMAIL}"  info="{USER_CONT}" ></StandardListItem> 
+       </items>
+       </List>
+       <footer>
+       <Toolbar id="_IDGenToolbar2" >
+       <ToolbarSpacer id="_IDGenToolbarSpacer2" ></ToolbarSpacer>
+       <Button id="_IDGenButton1" text="SUbmit" type="Emphasized" press="onSubmit" ></Button>
+       </Toolbar>
+       </footer>
+    </Page>
+</mvc:View>
